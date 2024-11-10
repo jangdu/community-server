@@ -30,7 +30,7 @@ app.use('/api/posts', postRoutes);
 app.use('/api/votes', votesRoutes);
 
 app.use(express.static('public'));
-let port = 4000;
+let port = process.env.PORT;
 
 app.listen(port, async () => {
   console.log(`server running at ${process.env.APP_URL}`);
