@@ -1,7 +1,7 @@
-# Awesome Project Build with TypeORM
+## develop
 
-Steps to run this project:
-
-1. Run `npm i` command
-2. Setup database settings inside `data-source.ts` file
-3. Run `npm start` command
+```bash
+yarn install
+docker-compose up db redis
+yarn dev
+```
