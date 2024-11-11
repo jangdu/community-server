@@ -4,7 +4,6 @@ import User from '../entities/user.entity';
 import { isEmpty, validate } from 'class-validator';
 import jwt from 'jsonwebtoken';
 import cookie from 'cookie';
-import dotenv from 'dotenv';
 
 import userMiddleware from '../middlewares/user';
 import authMiddleware from '../middlewares/auth';
