@@ -3,10 +3,10 @@ import { Request, Response, Router } from 'express';
 import userMiddleware from '../middlewares/user';
 import authMiddleware from '../middlewares/auth';
 
-import User from '../entities/User';
-import Post from '../entities/Post';
-import Vote from '../entities/Vote';
-import Comment from '../entities/Comment';
+import User from '../entities/user.entity';
+import Post from '../entities/post.entity';
+import Vote from '../entities/vote.entity';
+import Comment from '../entities/comment.entity';
 
 const vote = async (req: Request, res: Response) => {
   const { identifier, slug, commentIdentifier, value } = req.body;

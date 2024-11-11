@@ -1,16 +1,16 @@
-import { Column, Entity, JoinColumn, ManyToOne } from "typeorm";
-import Comment from "./Comment";
-import Post from "./Post";
-import User from "./User";
-import DefaultEntity from "./Entity";
+import { Column, Entity, JoinColumn, ManyToOne } from 'typeorm';
+import Comment from './comment.entity';
+import Post from './post.entity';
+import User from './user.entity';
+import DefaultEntity from './default/default.entity';
 
-@Entity("votes")
+@Entity('votes')
 export default class Vote extends DefaultEntity {
   @Column()
   value: number;
 
   @ManyToOne(() => User)
-  @JoinColumn({ name: "username", referencedColumnName: "username" })
+  @JoinColumn({ name: 'username', referencedColumnName: 'username' })
   user: User;
 
   @Column()

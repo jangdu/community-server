@@ -8,11 +8,11 @@ import {
   OneToMany,
 } from 'typeorm';
 import { Exclude, Expose } from 'class-transformer';
-import Community from './Community';
-import DefaultEntity from './Entity';
-import User from './User';
-import Vote from './Vote';
-import Comment from './Comment';
+import Community from './community.entity';
+import DefaultEntity from './default/default.entity';
+import User from './user.entity';
+import Vote from './vote.entity';
+import Comment from './comment.entity';
 import { makeId } from '../utils/helpers';
 import { slugify } from 'transliteration';
 

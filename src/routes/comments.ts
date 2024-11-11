@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import Post from '../entities/Post';
-import Comment from '../entities/Comment';
+import Post from '../entities/post.entity';
+import Comment from '../entities/comment.entity';
 
 export const createComment = async (req: Request, res: Response) => {
   const { identifier, slug } = req.params;

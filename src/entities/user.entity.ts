@@ -1,9 +1,9 @@
 import { Entity, Column, Index, OneToMany, BeforeInsert } from 'typeorm';
-import DefaultEntity from './Entity';
+import DefaultEntity from './default/default.entity';
 import { IsEmail, Length } from 'class-validator';
 import { Exclude } from 'class-transformer';
-import Post from './Post';
-import Vote from './Vote';
+import Post from './post.entity';
+import Vote from './vote.entity';
 
 import bcrypt from 'bcryptjs';
 

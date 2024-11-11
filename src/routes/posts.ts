@@ -1,8 +1,8 @@
 import { Request, Response, Router } from 'express';
 import userMiddleware from '../middlewares/user';
 import authMiddleware from '../middlewares/auth';
-import Community from '../entities/Community';
-import Post from '../entities/Post';
+import Community from '../entities/community.entity';
+import Post from '../entities/post.entity';
 import { createComment, getComments } from './comments';
 
 const getPosts = async (req: Request, res: Response) => {

@@ -1,12 +1,20 @@
-import { Exclude, Expose } from "class-transformer";
-import { BeforeInsert, Column, Entity, Index, JoinColumn, ManyToOne, OneToMany } from "typeorm";
-import { makeId } from "../utils/helpers";
-import Post from "./Post";
-import Vote from "./Vote";
-import User from "./User";
-import DefaultEntity from "./Entity";
+import { Exclude, Expose } from 'class-transformer';
+import {
+  BeforeInsert,
+  Column,
+  Entity,
+  Index,
+  JoinColumn,
+  ManyToOne,
+  OneToMany,
+} from 'typeorm';
+import { makeId } from '../utils/helpers';
+import Post from './post.entity';
+import Vote from './vote.entity';
+import User from './user.entity';
+import DefaultEntity from './default/default.entity';
 
-@Entity("comments")
+@Entity('comments')
 export default class Comment extends DefaultEntity {
   @Index()
   @Column()
@@ -19,7 +27,7 @@ export default class Comment extends DefaultEntity {
   username: string;
 
   @ManyToOne(() => User)
-  @JoinColumn({ name: "username", referencedColumnName: "username" })
+  @JoinColumn({ name: 'username', referencedColumnName: 'username' })
   user: User;
 
   @Column()
@@ -41,7 +49,11 @@ export default class Comment extends DefaultEntity {
 
   @Expose() get voteScore(): number {
     const initialValue = 0;
-    return this.votes?.reduce((previousValue, currentObject) => previousValue + (currentObject.value || 0), initialValue);
+    return this.votes?.reduce(
+      (previousValue, currentObject) =>
+        previousValue + (currentObject.value || 0),
+      initialValue,
+    );
   }
 
   @BeforeInsert()

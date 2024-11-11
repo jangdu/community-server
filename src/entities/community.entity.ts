@@ -6,9 +6,9 @@ import {
   ManyToOne,
   OneToMany,
 } from 'typeorm';
-import DefaultEntity from './Entity';
-import Post from './Post';
-import User from './User';
+import DefaultEntity from './default/default.entity';
+import Post from './post.entity';
+import User from './user.entity';
 import { Expose } from 'class-transformer';
 
 @Entity('communities')

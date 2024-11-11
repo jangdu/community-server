@@ -1,12 +1,12 @@
 import { isEmpty } from 'class-validator';
 import { NextFunction, Request, Response, Router } from 'express';
 import { AppDataSource } from '../data-source';
-import Community from '../entities/Community';
-import User from '../entities/User';
+import Community from '../entities/community.entity';
+import User from '../entities/user.entity';
 import multer, { FileFilterCallback } from 'multer';
 import userMiddleware from '../middlewares/user';
 import authMiddleware from '../middlewares/auth';
-import Post from '../entities/Post';
+import Post from '../entities/post.entity';
 import path from 'path';
 import { unlinkSync } from 'fs';
 import { makeId } from '../utils/helpers';

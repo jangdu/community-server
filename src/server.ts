@@ -9,7 +9,7 @@ import cookieParser from 'cookie-parser';
 
 import authRoutes from './routes/auth';
 import communitiesRoutes from './routes/communities';
-import postRoutes from './routes/post';
+import postRoutes from './routes/posts';
 import votesRoutes from './routes/votes';
 
 const app = express();
