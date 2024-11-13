@@ -11,6 +11,7 @@ import authRoutes from './routes/auth';
 import communitiesRoutes from './routes/communities';
 import postRoutes from './routes/posts';
 import votesRoutes from './routes/votes';
+import { errorHandler } from './middlewares/error.middleware';
 
 const app = express();
 
@@ -30,6 +31,9 @@ app.use('/api/posts', postRoutes);
 app.use('/api/votes', votesRoutes);
 
 app.use(express.static('public'));
+
+app.use(errorHandler);
+
 let port = process.env.PORT;
 
 app.listen(port, async () => {
