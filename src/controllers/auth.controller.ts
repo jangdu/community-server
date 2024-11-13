@@ -5,16 +5,11 @@ import cookie from 'cookie';
 import { isEmpty, validate } from 'class-validator';
 import User from '../entities/user.entity';
 import { AppError } from '../utils/error';
-
-interface AuthResponse {
-  success: boolean;
-  data?: any;
-  error?: string;
-}
+import { AuthResponse } from '../types/response-type';
 
 export class AuthController {
   private createToken(username: string): string {
-    return jwt.sign({ username }, process.env.JWTSECRET);
+    return jwt.sign({ username }, process.env.JWT_SECRET);
   }
 
   private setCookie(res: Response, token: string, remove: boolean = false) {
