@@ -15,7 +15,7 @@ export default class User extends DefaultEntity {
   email: string;
 
   @Index()
-  @Length(3, 20, { message: '사용자명은 3-20자 사이여야 합니다.' })
+  @Length(2, 20, { message: '사용자명은 3-20자 사이여야 합니다.' })
   @Column({ unique: true })
   username: string;
 
